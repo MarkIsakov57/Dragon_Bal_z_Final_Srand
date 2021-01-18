@@ -372,13 +372,7 @@ local NumRandom = nil
 local PathNpcQuests = nil 
 backNumber = 0
 
-local function ResetTbl(Tbl,Value)
-for x,v in next,Tbl do
-  if x == Value  then
-     Tbl[v] = nil
-     return
-  end
-  end end
+
 local function SearchQuest()
    v = nil
   repeat
