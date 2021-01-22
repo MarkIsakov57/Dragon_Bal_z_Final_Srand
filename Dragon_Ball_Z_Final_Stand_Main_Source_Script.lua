@@ -501,13 +501,6 @@ end
    repeat
     wait(0.3)
   until  MyChar:FindFirstChild("HumanoidRootPart")
- wait(1)
- if BackPos ~= nil then
-  wait()
-Tweened =  game:GetService("TweenService"):Create(MyChar.HumanoidRootPart, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = BackPos})
-   Tweened:Play()
-
-end
   end
   if  input.KeyCode == TblKeys["KickKey"] and not InKick  and KickBool and VictimeKick ~= nil and not _G.Focused and  TblKeys["KickKey"] ~= "              ..." then
   InKick = true 
@@ -1353,32 +1346,17 @@ local ArgsZ = {}
 local InZ = false
 local function BuyAutoZKai()
   InZ = true
+  wait(0.1)
  ArgsZ = {
     [1] = workspace.FriendlyNPCs["Elder Kai"],
 }
-Pl.Backpack.ServerTraits.ChatStart:FireServer(unpack(ArgsZ))
+Pl.Backpack.ServerTraits.ChatStart:FireServer(workspace.FriendlyNPCs["Elder Kai"])
 wait(0.3)
-ArgsZ = {
-    [1] = {
-        [1] = "k",
-    },
-}
-Pl.Backpack.ServerTraits.ChatAdvance:FireServer(unpack(ArgsZ))
+Pl.Backpack.ServerTraits.ChatAdvance:FireServer({"k"})
 wait(0.3)
-ArgsZ = {
-    [1] = {
-        [1] = "Yes",
-    },
-}
-
-Pl.Backpack.ServerTraits.ChatAdvance:FireServer(unpack(ArgsZ))
+Pl.Backpack.ServerTraits.ChatAdvance:FireServer({"Yes"})
 wait(0.3)
-ArgsZ = {
-    [1] = {
-        [1] = "k",
-    },
-}
-Pl.Backpack.ServerTraits.ChatAdvance:FireServer(unpack(ArgsZ))
+Pl.Backpack.ServerTraits.ChatAdvance:FireServer({"k"})
 wait(0.6)
 InZ = false
 end
